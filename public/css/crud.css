@@ -1,0 +1,27 @@
+body { margin:0; background:#f4f7f4; color:#26352a; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+.crud-contenedor { width:min(1180px,94%); margin:2rem auto 3rem; }
+.crud-encabezado { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:1.35rem; }
+.crud-encabezado h1 { color:#1b5e20; font-size:clamp(1.5rem,3vw,2rem); font-weight:800; margin:0 0 .35rem; }
+.crud-encabezado p { margin:0; color:#68766b; }
+.crud-panel { background:#fff; border:1px solid #e1e9e2; border-radius:15px; padding:1.25rem; box-shadow:0 5px 18px rgba(25,70,32,.06); margin-bottom:1.25rem; }
+.crud-panel h2 { color:#245b2b; font-size:1.12rem; font-weight:750; margin:0 0 1rem; }
+.crud-form-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.9rem 1rem; }
+.crud-campo label { display:block; color:#344638; font-size:.88rem; font-weight:650; margin-bottom:.35rem; }
+.crud-campo input,.crud-campo select { width:100%; min-height:42px; border:1px solid #ced9cf; border-radius:8px; padding:.55rem .7rem; background:#fff; color:#26352a; outline:none; }
+.crud-campo input:focus,.crud-campo select:focus { border-color:#388e3c; box-shadow:0 0 0 3px rgba(56,142,60,.13); }
+.crud-acciones-form { display:flex; gap:.65rem; margin-top:1rem; flex-wrap:wrap; }
+.btn-agro { border:0; border-radius:8px; padding:.62rem 1rem; font-weight:650; cursor:pointer; transition:.2s; }
+.btn-primario { background:#1b5e20; color:#fff; }.btn-primario:hover { background:#124719; }
+.btn-secundario { background:#e8f5e9; color:#1b5e20; }.btn-secundario:hover { background:#d4ead6; }
+.btn-tabla { border:0; border-radius:7px; padding:.35rem .6rem; margin:.12rem; font-size:.8rem; font-weight:650; cursor:pointer; background:#e8f5e9; color:#1b5e20; }
+.btn-tabla.danger { background:#ffebee; color:#b71c1c; }.btn-tabla:disabled { opacity:.45; cursor:not-allowed; }
+.crud-tabla-wrap { overflow-x:auto; }
+.crud-tabla { width:100%; border-collapse:collapse; min-width:650px; }
+.crud-tabla th,.crud-tabla td { padding:.78rem .7rem; text-align:left; border-bottom:1px solid #e8eee8; font-size:.88rem; vertical-align:middle; }
+.crud-tabla th { color:#45634a; background:#f2f8f2; font-weight:750; white-space:nowrap; }
+.crud-tabla tbody tr:hover { background:#fafdfa; }
+.estado { display:inline-block; border-radius:30px; padding:.23rem .6rem; font-size:.75rem; font-weight:700; }.estado.activo { background:#e8f5e9; color:#1b5e20; }.estado.inactivo { background:#ffebee; color:#b71c1c; }
+.crud-alerta { display:none; padding:.75rem .9rem; margin-bottom:1rem; border-radius:8px; font-size:.9rem; }.crud-alerta.visible { display:block; }.crud-alerta.error { color:#9f2020; background:#ffebee; }.crud-alerta.ok { color:#1b5e20; background:#e8f5e9; }
+.crud-busqueda { max-width:330px; width:100%; border:1px solid #ced9cf; border-radius:8px; padding:.55rem .75rem; }
+@media(max-width:760px) { .crud-contenedor { margin:1.25rem auto 2rem; }.crud-encabezado { flex-direction:column; }.crud-form-grid { grid-template-columns:1fr 1fr; }.crud-panel { padding:1rem; } }
+@media(max-width:480px) { .crud-form-grid { grid-template-columns:1fr; }.crud-acciones-form .btn-agro { flex:1; }.crud-busqueda { max-width:none; } }

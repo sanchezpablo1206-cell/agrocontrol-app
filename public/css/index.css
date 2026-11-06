@@ -1,0 +1,22 @@
+.login-fondo {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 40, 0, .45), rgba(0, 40, 0, .45)), url('/img/login.jpg') center/cover no-repeat;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #1b5e20;
+    font-size: 2rem;
+}

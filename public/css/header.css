@@ -1,0 +1,24 @@
+:root { --agro-verde: #1b5e20; --agro-verde-oscuro: #124719; --agro-claro: #e8f5e9; }
+* { box-sizing: border-box; }
+.header-agro { min-height: 68px; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:.65rem clamp(1rem,4vw,3rem); background:var(--agro-verde); box-shadow:0 2px 10px rgba(0,0,0,.2); position:sticky; top:0; z-index:1000; }
+.marca { display:flex; align-items:center; gap:.65rem; color:#fff; text-decoration:none; font-size:1.25rem; font-weight:800; white-space:nowrap; }
+.marca-icono { font-size:1.8rem; }.marca small { display:block; color:#c8e6c9; font-size:.68rem; font-weight:400; letter-spacing:.04em; }
+.nav-agro { display:flex; align-items:center; justify-content:space-between; gap:1.25rem; flex:1; }
+.nav-enlaces { display:flex; align-items:center; gap:.35rem; margin-left:auto; }
+.nav-link-agro { display:inline-flex; align-items:center; gap:.45rem; color:#e8f5e9; text-decoration:none; border:0; background:transparent; padding:.62rem .9rem; border-radius:9px; font:inherit; cursor:pointer; transition:background .2s,color .2s; }
+.nav-link-agro:hover { background:rgba(255,255,255,.14); color:#fff; }.nav-link-agro.activo { background:#fff; color:var(--agro-verde); font-weight:700; }
+.nav-usuario { display:flex; align-items:center; gap:.8rem; padding-left:1rem; border-left:1px solid rgba(255,255,255,.25); }
+.usuario-nombre { color:#fff; font-size:.9rem; font-weight:600; }.usuario-nombre small { display:block; color:#c8e6c9; font-size:.72rem; font-weight:400; }
+.nav-link-agro.salir { background:#c62828; color:#fff; white-space:nowrap; }.nav-link-agro.salir:hover { background:#e53935; }
+.menu-toggle { display:none; width:42px; height:42px; border:1px solid rgba(255,255,255,.4); border-radius:9px; background:transparent; padding:9px; cursor:pointer; }
+.menu-toggle span { display:block; height:2px; margin:5px 0; background:#fff; border-radius:2px; transition:.2s; }
+@media (max-width: 820px) {
+ .header-agro { flex-wrap:wrap; min-height:64px; padding:.6rem 1rem; }
+ .menu-toggle { display:block; margin-left:auto; }
+ .nav-agro { display:none; flex:0 0 100%; width:100%; align-items:stretch; flex-direction:column; gap:.75rem; padding:.5rem 0 .35rem; }
+ .nav-agro.abierto { display:flex; }
+ .nav-enlaces { flex-direction:column; align-items:stretch; margin:0; gap:.25rem; }
+ .nav-link-agro { width:100%; justify-content:flex-start; padding:.8rem .9rem; }
+ .nav-usuario { border-left:0; border-top:1px solid rgba(255,255,255,.25); padding: .8rem 0 0; flex-direction:column; align-items:stretch; gap:.65rem; }
+ .usuario-nombre { padding:0 .9rem; }
+}

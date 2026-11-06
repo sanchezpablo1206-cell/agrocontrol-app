@@ -11,4 +11,10 @@ Usuario.belongsTo(Perfil, { foreignKey: 'idperfil', as: 'perfil' });
 Persona.hasOne(Usuario, { foreignKey: 'idpersona', as: 'usuario' });
 Usuario.belongsTo(Persona, { foreignKey: 'idpersona', as: 'persona' });
 
+// Sin migraciones: Sequelize crea y sincroniza las tablas a partir de estos modelos.
+// alter:true adapta las columnas existentes; respalda la BD antes de usarlo con datos reales.
+export const sincronizarTablas = async () => {
+  await sequelize.sync({ alter: true });
+};
+
 export { sequelize, Perfil, Persona, Usuario };

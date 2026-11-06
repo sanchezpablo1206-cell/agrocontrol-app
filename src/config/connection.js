@@ -1,11 +1,11 @@
-import { sequelize } from '../models/index.js'; // importar desde models garantiza que las relaciones ya estén registradas
+import { sequelize, sincronizarTablas } from '../models/index.js'; // los modelos y relaciones se cargan antes de sincronizar
 
 export const connectDB = async () => {
   try {
     await sequelize.authenticate();
     console.log('✅ Conexión a MySQL exitosa');
 
-    await sequelize.sync({ alter: true });
+    await sincronizarTablas();
     console.log('✅ Tablas sincronizadas');
   } catch (error) {
     console.error('❌ Error al conectar con la base de datos:', error);

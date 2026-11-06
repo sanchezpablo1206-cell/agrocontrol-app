@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+}
+
+.home-fondo {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('/img/home.jpg') center/cover no-repeat;
+}
+
+.bienvenida {
+    max-width: 600px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .4);
+}
+
+.bienvenida h1 {
+    color: #1b5e20;
+    font-weight: 800;
+}
+
+.bienvenida p {
+    font-size: 1.3rem;
+    color: #33691e;
+    margin: 0;
+}
