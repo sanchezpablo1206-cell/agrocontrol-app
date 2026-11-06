@@ -1,6 +1,9 @@
-// URL del backend. En local apunta a localhost; en producción, a Render.
-const enLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+// URL de la API.
+// - Servido por Express (localhost:4000 o Railway): ruta relativa, mismo origen.
+// - Abierto con Live Server (otro puerto): apunta al backend local.
+const esLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+const servidoPorExpress = location.port === '4000' || !esLocal;
 
-export const API_URL = enLocal
-  ? 'http://localhost:4000/api'
-  : 'https://TU-BACKEND.onrender.com/api'; // cambia por tu URL real de Render
+export const API_URL = servidoPorExpress
+  ? '/api'
+  : 'http://localhost:4000/api';
