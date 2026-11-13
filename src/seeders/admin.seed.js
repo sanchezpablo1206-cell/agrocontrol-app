@@ -16,6 +16,10 @@ export const crearAdmin = async () => {
       idpersona: randomUUID(),
       nom1: 'Administrador',
       apell1: 'Sistema',
+      documento: process.env.ADMIN_DOCUMENTO || '1000000000',
+      movil: process.env.ADMIN_MOVIL || '3000000000',
+      direccion: 'Por actualizar',
+      fecha_nac: '1990-01-01',
       correo: process.env.ADMIN_EMAIL
     });
 

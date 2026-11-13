@@ -25,3 +25,17 @@ body { margin:0; background:#f4f7f4; color:#26352a; font-family:system-ui,-apple
 .crud-busqueda { max-width:330px; width:100%; border:1px solid #ced9cf; border-radius:8px; padding:.55rem .75rem; }
 @media(max-width:760px) { .crud-contenedor { margin:1.25rem auto 2rem; }.crud-encabezado { flex-direction:column; }.crud-form-grid { grid-template-columns:1fr 1fr; }.crud-panel { padding:1rem; } }
 @media(max-width:480px) { .crud-form-grid { grid-template-columns:1fr; }.crud-acciones-form .btn-agro { flex:1; }.crud-busqueda { max-width:none; } }
+
+/* Estado de cultivo Finalizado */
+.estado.finalizado { background:#e3f2fd; color:#0d47a1; }
+
+/* Subtítulos dentro del formulario */
+.crud-subtitulo { color:#45634a; font-size:.95rem; font-weight:700; margin:1rem 0 .6rem; }
+
+/* Imágenes: vista previa en el formulario y miniatura en la tabla */
+.crud-preview { display:block; max-width:140px; max-height:100px; margin-top:.5rem; border-radius:8px; border:1px solid #e1e9e2; object-fit:cover; }
+.crud-miniatura { width:48px; height:48px; border-radius:8px; object-fit:cover; border:1px solid #e1e9e2; background:#f2f8f2; }
+
+/* Filtros de la tabla */
+.crud-filtros { display:flex; flex-wrap:wrap; gap:.5rem; }
+.crud-filtros select { border:1px solid #ced9cf; border-radius:8px; padding:.5rem .7rem; background:#fff; }

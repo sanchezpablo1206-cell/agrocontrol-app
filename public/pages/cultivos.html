@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cultivos | AgroControl</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/crud.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <main class="crud-contenedor">
+        <div class="crud-encabezado">
+            <div>
+                <h1>Mis cultivos</h1>
+                <p>Lleva el control de cada siembra con sus requerimientos climáticos y de suelo.</p>
+            </div>
+        </div>
+
+        <div id="alerta" class="crud-alerta"></div>
+
+        <section class="crud-panel">
+            <h2 id="titulo-form">Registrar cultivo</h2>
+            <form id="formCrud">
+                <input type="hidden" id="idregistro">
+
+                <h3 class="crud-subtitulo">Datos del cultivo</h3>
+                <div class="crud-form-grid">
+                    <div class="crud-campo">
+                        <label for="idlote">Lote *</label>
+                        <select id="idlote" required>
+                            <option value="">Selecciona un lote</option>
+                        </select>
+                        <small class="text-muted">El lote no se puede cambiar después de registrado.</small>
+                    </div>
+                    <div class="crud-campo">
+                        <label for="idtipocultivo">Tipo de cultivo *</label>
+                        <select id="idtipocultivo" required>
+                            <option value="">Selecciona un tipo</option>
+                        </select>
+                    </div>
+                    <div class="crud-campo">
+                        <label for="codigoc">Código *</label>
+                        <input id="codigoc" required maxlength="20" placeholder="Ej. C-2026-01">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="nombre">Nombre *</label>
+                        <input id="nombre" required maxlength="100" placeholder="Ej. Tomate chonto">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="fecha_siembra">Fecha de siembra *</label>
+                        <input id="fecha_siembra" type="date" required>
+                    </div>
+                    <div class="crud-campo">
+                        <label for="imagen">Imagen <span id="ayuda-imagen">*</span></label>
+                        <input id="imagen" type="file" accept="image/jpeg,image/png">
+                        <small class="text-muted">JPG o PNG, máximo 2 MB.</small>
+                        <img id="vista-previa" class="crud-preview" alt="Vista previa" hidden>
+                    </div>
+                </div>
+
+                <h3 class="crud-subtitulo">Requerimientos climáticos y de suelo</h3>
+                <div class="crud-form-grid">
+                    <div class="crud-campo">
+                        <label for="temp_min">Temperatura mínima (°C) *</label>
+                        <input id="temp_min" type="number" required step="0.1">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="temp_max">Temperatura máxima (°C) *</label>
+                        <input id="temp_max" type="number" required step="0.1">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="tipo_suelo">Tipo de suelo recomendado *</label>
+                        <select id="tipo_suelo" required>
+                            <option value="">Selecciona el suelo</option>
+                            <option>Arcilloso</option>
+                            <option>Arenoso</option>
+                            <option>Limoso</option>
+                            <option>Franco</option>
+                            <option>Franco-arcilloso</option>
+                            <option>Franco-arenoso</option>
+                            <option>Humífero</option>
+                            <option>Pedregoso</option>
+                        </select>
+                    </div>
+                    <div class="crud-campo">
+                        <label for="ph_min">pH mínimo *</label>
+                        <input id="ph_min" type="number" required min="0" max="14" step="0.1">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="ph_max">pH máximo *</label>
+                        <input id="ph_max" type="number" required min="0" max="14" step="0.1">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="agua_semana">Necesidad de agua (mm/semana) *</label>
+                        <input id="agua_semana" type="number" required min="0" step="0.1">
+                    </div>
+                    <div class="crud-campo">
+                        <label for="ciclo_dias">Ciclo estimado (días) *</label>
+                        <input id="ciclo_dias" type="number" required min="1" step="1">
+                    </div>
+                </div>
+
+                <div class="crud-acciones-form">
+                    <button class="btn-agro btn-primario" type="submit">Guardar cultivo</button>
+                    <button class="btn-agro btn-secundario" type="button" id="cancelar">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="crud-panel" id="panel-finalizar" hidden>
+            <h2>Finalizar cultivo <span id="finalizar-nombre"></span></h2>
+            <p class="text-muted">Al finalizar, el cultivo ya no admitirá nuevos gastos.</p>
+            <form id="formFinalizar">
+                <div class="crud-form-grid">
+                    <div class="crud-campo">
+                        <label for="fecha_cierre">Fecha de cierre *</label>
+                        <input id="fecha_cierre" type="date" required>
+                    </div>
+                </div>
+                <div class="crud-acciones-form">
+                    <button class="btn-agro btn-primario" type="submit">Finalizar</button>
+                    <button class="btn-agro btn-secundario" type="button" id="cancelar-finalizar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="crud-panel">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                <h2 class="mb-0">Cultivos registrados</h2>
+                <div class="crud-filtros">
+                    <select id="filtro-lote">
+                        <option value="">Todos los lotes</option>
+                    </select>
+                    <select id="filtro-tipo">
+                        <option value="">Todos los tipos</option>
+                    </select>
+                    <select id="filtro-estado">
+                        <option value="">Todos los estados</option>
+                        <option>En curso</option>
+                        <option>Finalizado</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="crud-tabla-wrap">
+                <table class="crud-tabla">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Lote</th>
+                            <th>Tipo</th>
+                            <th>Fecha de siembra</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="/js/cultivos.js"></script>
+</body>
+
+</html>

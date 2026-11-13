@@ -6,7 +6,13 @@ const OPCIONES = [
   { texto: 'Inicio', url: '/pages/home.html', icono: '⌂', roles: ['admin', 'user'] },
   { texto: 'Personas', url: '/pages/personas.html', icono: '♙', roles: ['admin'] },
   { texto: 'Perfiles', url: '/pages/perfiles.html', icono: '▤', roles: ['admin'] },
-  { texto: 'Usuarios', url: '/pages/usuarios.html', icono: '♧', roles: ['admin'] }
+  { texto: 'Usuarios', url: '/pages/usuarios.html', icono: '♧', roles: ['admin'] },
+  { texto: 'Tipos de gasto', url: '/pages/tipos-gasto.html', icono: '☰', roles: ['admin'] },
+  { texto: 'Tipos de cultivo', url: '/pages/tipos-cultivo.html', icono: '❀', roles: ['admin'] },
+  { texto: 'Mis lotes', url: '/pages/lotes.html', icono: '▦', roles: ['admin', 'user'] },
+  { texto: 'Cultivos', url: '/pages/cultivos.html', icono: '✿', roles: ['admin', 'user'] },
+  { texto: 'Gastos', url: '/pages/gastos.html', icono: '$', roles: ['admin', 'user'] },
+  { texto: 'Mis datos', url: '/pages/mis-datos.html', icono: '☺', roles: ['admin', 'user'] }
 ];
 
 export function renderHeader() {

@@ -1,1 +1,57 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Perfiles | AgroControl</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="/css/header.css"><link rel="stylesheet" href="/css/crud.css"></head><body><div id="header"></div><main class="crud-contenedor"><div class="crud-encabezado"><div><h1>Gestión de perfiles</h1><p>Administra los perfiles disponibles para los usuarios.</p></div></div><div id="alerta" class="crud-alerta"></div><section class="crud-panel"><h2 id="titulo-form">Registrar perfil</h2><form id="formCrud"><input type="hidden" id="idregistro"><div class="crud-form-grid"><div class="crud-campo"><label for="descripc">Nombre del perfil *</label><input id="descripc" required maxlength="100" placeholder="Ej. Administrador"></div></div><div class="crud-acciones-form"><button class="btn-agro btn-primario" type="submit">Guardar perfil</button><button class="btn-agro btn-secundario" type="button" id="cancelar">Limpiar</button></div></form></section><section class="crud-panel"><div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3"><h2 class="mb-0">Perfiles registrados</h2><input id="buscar" class="crud-busqueda" placeholder="Buscar perfil..."></div><div class="crud-tabla-wrap"><table class="crud-tabla"><thead><tr><th>Descripción</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="tabla"></tbody></table></div></section></main><script type="module" src="/js/perfiles.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfiles | AgroControl</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/crud.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <main class="crud-contenedor">
+        <div class="crud-encabezado">
+            <div>
+                <h1>Gestión de perfiles</h1>
+                <p>Administra los perfiles disponibles para los usuarios.</p>
+            </div>
+        </div>
+        <div id="alerta" class="crud-alerta"></div>
+        <section class="crud-panel">
+            <h2 id="titulo-form">Registrar perfil</h2>
+            <form id="formCrud"><input type="hidden" id="idregistro">
+                <div class="crud-form-grid">
+                    <div class="crud-campo"><label for="descripc">Nombre del perfil *</label><input id="descripc"
+                            required maxlength="100" placeholder="Ej. Administrador"></div>
+                </div>
+                <div class="crud-acciones-form"><button class="btn-agro btn-primario" type="submit">Guardar
+                        perfil</button><button class="btn-agro btn-secundario" type="button"
+                        id="cancelar">Limpiar</button></div>
+            </form>
+        </section>
+        <section class="crud-panel">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                <h2 class="mb-0">Perfiles registrados</h2><input id="buscar" class="crud-busqueda"
+                    placeholder="Buscar perfil...">
+            </div>
+            <div class="crud-tabla-wrap">
+                <table class="crud-tabla">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="/js/perfiles.js"></script>
+</body>
+
+</html>
