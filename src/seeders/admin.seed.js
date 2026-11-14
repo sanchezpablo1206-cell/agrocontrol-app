@@ -4,6 +4,12 @@ import { Perfil, Persona, Usuario } from '../models/index.js';
 
 export const crearAdmin = async () => {
   try {
+    // Perfil por defecto para quienes se registran desde la página pública
+    await Perfil.findOrCreate({
+      where: { descripc: 'Productor' },
+      defaults: { idperfil: randomUUID() }
+    });
+
     const existe = await Usuario.findOne({ where: { rol: 'admin' } });
     if (existe) return;
 
